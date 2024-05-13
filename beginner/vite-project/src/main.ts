@@ -19,13 +19,12 @@ import { bootstrapCameraKit } from "@snap/camera-kit"
 
   await session.play();
 
+  const lensId = liveRenderTarget.getAttribute("lensId");
+  const groupId = liveRenderTarget.getAttribute("groupId");
+
   const lens = await cameraKit.lensRepository.loadLens(
-    // "39432910922",
-    // "33bca480-6e43-423e-a729-459a819ad784"
-    // "727e7687-a3f5-4761-bfee-unda42ade59",
-    // "86605285-90b4-44e6-bb3e-c33009e2704b"
-    "978bad99-3b8c-45f1-8711-8c8528ead8f1",
-    "7c697050-fade-4e3e-987e-ab838a913c17"
+    lensId ? lensId : "",
+    groupId ? groupId : "",
   );
   
   await session.applyLens(lens);
