@@ -14,13 +14,7 @@ export default {
     rollupOptions: {
       input: {
         main: './index.html',
-        birthday: './lenses/birthday.html',
-        earrings: './lenses/earrings.html',
-        necklace: './lenses/necklace.html',
-        watch: './lenses/watch.html',
-        glasses: './lenses/glasses.html',
-        shoes: './lenses/shoes.html',
-        clothes: './lenses/clothes.html',
+        lenses: './lenses/index.html',
       },
     },
   },

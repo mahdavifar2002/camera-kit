@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="/src/style.css" />
+  <title>Try-on</title>
+</head>
+
+<body style="margin: 0; padding: 0;">
+  <div class="center">
+    <canvas id="canvas" class="loading" camera="front" style="position: absolute; max-width: 100vw;"></canvas>
+    <div id="spinner" class="spinner">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+  <script>eruda.init();</script>
+</body>
+
+</html>
