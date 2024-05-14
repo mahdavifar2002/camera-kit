@@ -1,4 +1,4 @@
-import { bootstrapCameraKit } from "@snap/camera-kit"
+import { bootstrapCameraKit, createMediaStreamSource, Transform2D } from "@snap/camera-kit"
 
 (async function() {
   const cameraKit = await bootstrapCameraKit({
@@ -6,16 +6,22 @@ import { bootstrapCameraKit } from "@snap/camera-kit"
   });
 
   const liveRenderTarget = document.getElementById("canvas") as HTMLCanvasElement;
+  const cameraMode = liveRenderTarget.getAttribute("camera") || "front";
 
   const session = await cameraKit.createSession({ liveRenderTarget });
 
-  const mediaSteam = await navigator.mediaDevices.getUserMedia({
+  var mediaStream = await navigator.mediaDevices.getUserMedia({
     video: {
-      facingMode: 'user'
+      facingMode: cameraMode == "front" ? "user" : "environment"
     },
   });
+  
+  const source = createMediaStreamSource(mediaStream);
 
-  await session.setSource(mediaSteam);
+  await session.setSource(source);
+  
+  if (cameraMode == "front")
+    source.setTransform(Transform2D.MirrorX);
 
   await session.play();
 

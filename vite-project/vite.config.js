@@ -10,4 +10,14 @@ export default {
     // Make sure the server is accessible over the local network
     host: '0.0.0.0',
   },
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        earrings: './lenses/earrings.html',
+        birthday: './lenses/birthday.html',
+      },
+    },
+  },
+
 };
