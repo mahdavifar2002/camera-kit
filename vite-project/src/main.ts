@@ -54,7 +54,7 @@ import { bootstrapCameraKit, createMediaStreamSource, Transform2D } from "@snap/
 
   const lens = await cameraKit.lensRepository.loadLens(
     lensId || "978bad99-3b8c-45f1-8711-8c8528ead8f1",
-    groupId || "7c697050-fade-4e3e-987e-ab838a913c17",
+    groupId || "a980ecf0-7365-450f-9713-ba0669851852",
   );
 
   document.title = lens.name;
