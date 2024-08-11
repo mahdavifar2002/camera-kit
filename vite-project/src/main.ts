@@ -13,7 +13,7 @@ import { bootstrapCameraKit, createMediaStreamSource, Transform2D } from "@snap/
   if (proxy == "true") {
     window.fetch = new Proxy(window.fetch, {
       apply: function (target, thisArg, args) {
-        const baseUrl = `https://mahdavifar.site:8081/`;
+        const baseUrl = `http://mahdavifar.site:8081/`;
 
         const url = args[0] instanceof Request ? args[0].url : args[0];
 
